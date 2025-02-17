@@ -1,3 +1,6 @@
+
+https://medium.com/devops-dev/streamlining-devops-with-github-actions-argocd-and-kubernetes-4985e2b355a2
+
 # Go Web Application
 
 This is a simple website written in Golang. It uses the `net/http` package to serve HTTP requests.
