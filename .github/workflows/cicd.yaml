@@ -25,9 +25,9 @@ jobs:
     - name: Build
       working-directory: ./go-web-app
       run: |
-        ls -la  # Debug: List files to verify we're in the right directory
-        pwd     # Debug: Print working directory
-        cat go.mod  # Debug: View go.mod contents
+        ls -la  # Debug: Show directory contents
+        go mod init go-web-app
+        go mod tidy
         go build -o app
 
     - name: Test
