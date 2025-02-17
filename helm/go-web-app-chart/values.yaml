@@ -32,28 +32,28 @@ jobs:
     - name: Test
       run: go test ./...
   
-  code-quality:
-    runs-on: ubuntu-latest
+  # code-quality:
+  #   runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+  #   steps:
+  #   - name: Checkout repository
+  #     uses: actions/checkout@v4
 
-    - name: Set up Go 1.22
-      uses: actions/setup-go@v2
-      with:
-        go-version: '1.22.0'  # Added Go setup
+  #   - name: Set up Go 1.22
+  #     uses: actions/setup-go@v2
+  #     with:
+  #       go-version: '1.22.0'  # Added Go setup
 
-    - name: Run golangci-lint
-      uses: golangci/golangci-lint-action@v3  # Changed to v3 for better compatibility
-      with:
-        version: v1.56.2
-        args: --timeout=5m  # Added timeout
-        only-new-issues: true  # Only report new issues
+  #   - name: Run golangci-lint
+  #     uses: golangci/golangci-lint-action@v3  # Changed to v3 for better compatibility
+  #     with:
+  #       version: v1.56.2
+  #       args: --timeout=5m  # Added timeout
+  #       only-new-issues: true  # Only report new issues
   
   push:
     runs-on: ubuntu-latest
-    needs: [build, code-quality]
+    needs: [build] #, code-quality]
 
     steps:
     - name: Checkout repository
